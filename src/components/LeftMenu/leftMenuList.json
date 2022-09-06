@@ -1,0 +1,9 @@
+[
+  { "id": "1", "descr": "Dashboard", "icon": "AiOutlineHome" },
+  { "id": "2", "descr": "Projects", "icon": "AiOutlineFundProjectionScreen" },
+  { "id": "3", "descr": "Calendar", "icon": "AiOutlineCalendar" },
+  { "id": "4", "descr": "Email", "icon": "AiOutlineMail" },
+  { "id": "5", "descr": "Contact", "icon": "AiOutlineContacts" },
+  { "id": "6", "descr": "Chat", "icon": "AiOutlineWechat" },
+  { "id": "7", "desr": "File Manager", "icon": "AiOutlineFolder" }
+]

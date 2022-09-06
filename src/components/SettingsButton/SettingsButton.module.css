@@ -1,0 +1,33 @@
+.settingButton {
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  /* &: hover {
+    background-color: rgba(51, 102, 255, 0.2);
+  } */
+}
+.emailButtonIcon {
+  align-items: center;
+}
+
+/* .emailButtonText {
+  position: absolute;
+  display: block;
+  text-align: center;
+  align-items: center;
+  top: 3px;
+  right: 5px;
+  width: 16px;
+  height: 16px; 
+  padding: 3px 5px;
+  font-size: 10px;
+  color: #f2f2f2;
+  border-radius: 4px;
+  background-color: #0060af;
+} */
