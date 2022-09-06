@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
 export class App extends Component {
-  render() {}
+  render() {
+    return <div>start</div>;
+  }
 }
