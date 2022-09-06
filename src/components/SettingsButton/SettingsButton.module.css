@@ -7,11 +7,14 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  /* &: hover {
-    background-color: rgba(51, 102, 255, 0.2);
-  } */
+  border-radius: 10px;
 }
+
+.settingButton:hover {
+  background-color: rgba(51, 102, 255, 0.2);
+  color: #3366ff;
+}
+
 .emailButtonIcon {
   align-items: center;
 }

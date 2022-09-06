@@ -13,7 +13,7 @@ import {
 
 import { RiLogoutBoxRLine } from 'react-icons/ri';
 
-const LeftMenu = () => {
+const Aside = () => {
   return (
     <StyledLeftMenuContainer>
       <StyledLeftMenuBtn>
@@ -75,7 +75,7 @@ const LeftMenu = () => {
   );
 };
 
-export default LeftMenu;
+export default Aside;
 
 const StyledLeftMenuContainer = styled.div`
   padding: 20px;

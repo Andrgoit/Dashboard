@@ -8,21 +8,22 @@ import ButtonBlock from './ButtonBlock/ButtonBlock';
 import EmailButton from 'components/EmailButton/EmailButton';
 import NotificationButton from './NotificationButton/NotificationButton';
 import SettingsButton from './SettingsButton/SettingsButton';
-import LeftMenu from './LeftMenu/LeftMenu';
+import Aside from './LeftMenu/LeftMenu';
 
 export class App extends Component {
   state = {
     email: 3,
     notification: 12,
+    name: 'Andrey',
   };
 
   render() {
     return (
       <Container>
-        <LeftMenu />
+        <Aside />
         <BodyContainer>
           <Header>
-            <GreetBlock />
+            <GreetBlock name={this.state.name} />
             <SearchBlock />
             <ButtonBlock>
               <EmailButton email={this.state.email} />

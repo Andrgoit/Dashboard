@@ -1,9 +1,9 @@
 // import styled from 'styled-components';
 
-const GreetBlock = () => {
+const GreetBlock = ({ name }) => {
   return (
     <div>
-      <p>Hi, Andrey</p>
+      <p>Hi, {name}</p>
       <p>Here's what's happening today.</p>
     </div>
   );
