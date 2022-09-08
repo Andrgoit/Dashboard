@@ -1,16 +1,19 @@
-// import styled from 'styled-components';
-import css from 'components/EmailButton/EmailButton.module.css';
-
 import { AiOutlineMail } from 'react-icons/ai';
+
+import {
+  StyledEmailButton,
+  StyledEmailButtonIcon,
+  StyledEmailButtonText,
+} from 'components/EmailButton/EmailButton.styled';
 
 const EmailButton = ({ email }) => {
   return (
-    <div className={css.emailButton}>
-      <span className={css.emailButtonIcon}>
+    <StyledEmailButton>
+      <StyledEmailButtonIcon>
         <AiOutlineMail size="32px" />
-      </span>
-      {email && <span className={css.emailButtonText}>{email}</span>}
-    </div>
+      </StyledEmailButtonIcon>
+      {email && <StyledEmailButtonText>{email}</StyledEmailButtonText>}
+    </StyledEmailButton>
   );
 };
 

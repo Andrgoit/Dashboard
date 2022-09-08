@@ -8,13 +8,14 @@ import ButtonBlock from './ButtonBlock/ButtonBlock';
 import EmailButton from 'components/EmailButton/EmailButton';
 import NotificationButton from './NotificationButton/NotificationButton';
 import SettingsButton from './SettingsButton/SettingsButton';
-import Aside from './LeftMenu/LeftMenu';
+import Aside from './Aside/Aside';
 
 export class App extends Component {
   state = {
     email: 3,
     notification: 12,
     name: 'Andrey',
+    isOpenImageFinder: false,
   };
 
   render() {
@@ -32,6 +33,7 @@ export class App extends Component {
               {/* <ProfileButton /> */}
             </ButtonBlock>
           </Header>
+          <div className="apps"></div>
         </BodyContainer>
       </Container>
     );

@@ -1,11 +1,16 @@
-// import styled from 'styled-components';
+import {
+  StyledGreetBlockWrapper,
+  StyledGreetBlockText,
+} from 'components/GreetBlock/GreetBlock.styled';
 
 const GreetBlock = ({ name }) => {
   return (
-    <div>
-      <p>Hi, {name}</p>
-      <p>Here's what's happening today.</p>
-    </div>
+    <StyledGreetBlockWrapper>
+      <StyledGreetBlockText>Hi, {name}</StyledGreetBlockText>
+      <StyledGreetBlockText>
+        Here's what's happening today.
+      </StyledGreetBlockText>
+    </StyledGreetBlockWrapper>
   );
 };
 

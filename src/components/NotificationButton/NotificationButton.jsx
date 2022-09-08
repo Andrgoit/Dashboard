@@ -1,17 +1,23 @@
-import css from 'components/NotificationButton/NotificationButton.module.css';
+import {
+  StyledNotificationButton,
+  StyledNotificationButtonIcon,
+  StylednotificationButtonText,
+} from 'components/NotificationButton/NotificationButton.styled';
 
 import { IoMdNotificationsOutline } from 'react-icons/io';
 
 const NotificationButton = ({ notification }) => {
   return (
-    <div className={css.notificationButton}>
-      <span className={css.notificationButtonIcon}>
+    <StyledNotificationButton>
+      <StyledNotificationButtonIcon>
         <IoMdNotificationsOutline size="32px" />
-      </span>
+      </StyledNotificationButtonIcon>
       {notification && (
-        <span className={css.notificationButtonText}>{notification}</span>
+        <StylednotificationButtonText>
+          {notification}
+        </StylednotificationButtonText>
       )}
-    </div>
+    </StyledNotificationButton>
   );
 };
 

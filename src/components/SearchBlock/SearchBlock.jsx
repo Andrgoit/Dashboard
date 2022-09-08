@@ -1,19 +1,20 @@
-import css from 'components/SearchBlock/SearchBlock.module.css';
 import { BiSearch } from 'react-icons/bi';
+
+import {
+  StyledSearchBlockForm,
+  StyledSearchBlockButton,
+  StyledSearchBlockInput,
+} from 'components/SearchBlock/SearchBlock.styled';
 
 const SearchBlock = () => {
   return (
     <div>
-      <form className={css.searchBlockForm}>
-        <button className={css.searchBlockButton} type="submit">
+      <StyledSearchBlockForm>
+        <StyledSearchBlockButton type="submit">
           <BiSearch size="16px" />
-        </button>
-        <input
-          className={css.searchBlockInput}
-          type="text"
-          placeholder="Search..."
-        />
-      </form>
+        </StyledSearchBlockButton>
+        <StyledSearchBlockInput type="text" placeholder="Search..." />
+      </StyledSearchBlockForm>
     </div>
   );
 };
