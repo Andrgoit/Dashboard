@@ -6,9 +6,9 @@ import {
 
 import { IoMdNotificationsOutline } from 'react-icons/io';
 
-const NotificationButton = ({ notification }) => {
+const NotificationButton = ({ notification, darkTheme }) => {
   return (
-    <StyledNotificationButton>
+    <StyledNotificationButton darkTheme={darkTheme}>
       <StyledNotificationButtonIcon>
         <IoMdNotificationsOutline size="32px" />
       </StyledNotificationButtonIcon>

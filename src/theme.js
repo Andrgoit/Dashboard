@@ -18,7 +18,7 @@ export const theme = {
     secBgColorAsideBtn: '#3366ff',
     secBgColorHeaderBtn: 'rgba(51, 102, 255, 0.2)',
     secColorHeaderBtn: '#3366ff',
-    bgcAside: 'rgba(51, 102, 255, 0.1)',
+    bgcAside: 'rgb(51, 102, 255)',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {

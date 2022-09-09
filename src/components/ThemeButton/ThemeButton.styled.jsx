@@ -6,7 +6,7 @@ export const StyledThemeButton = styled.div`
   margin-right: ${p => p.theme.space[4] + 4}px;
   border-radius: ${p => p.theme.space[3] + 2}px;
   background-color: transparent;
-  color: ${p => (p.darkTheme ? p.theme.colors.black : p.theme.colors.primary)};
+  color: ${p => (p.darkTheme ? p.theme.colors.white : p.theme.colors.primary)};
   /* position: relative; */
   display: flex;
   justify-content: center;

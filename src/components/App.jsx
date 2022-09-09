@@ -48,9 +48,15 @@ export class App extends Component {
             />
             <SearchBlock />
             <Box display="flex" gridGap={4}>
-              <EmailButton email={this.state.email} />
-              <NotificationButton notification={this.state.notification} />
-              <SettingsButton />
+              <EmailButton
+                email={this.state.email}
+                darkTheme={this.state.darkTheme}
+              />
+              <NotificationButton
+                notification={this.state.notification}
+                darkTheme={this.state.darkTheme}
+              />
+              <SettingsButton darkTheme={this.state.darkTheme} />
               <ThemeButton
                 darkTheme={this.state.darkTheme}
                 onClick={this.changeTheme}

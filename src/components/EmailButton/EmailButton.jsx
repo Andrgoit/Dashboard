@@ -6,9 +6,9 @@ import {
   StyledEmailButtonText,
 } from 'components/EmailButton/EmailButton.styled';
 
-const EmailButton = ({ email }) => {
+const EmailButton = ({ email, darkTheme }) => {
   return (
-    <StyledEmailButton>
+    <StyledEmailButton darkTheme={darkTheme}>
       <StyledEmailButtonIcon>
         <AiOutlineMail size="32px" />
       </StyledEmailButtonIcon>

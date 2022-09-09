@@ -1,14 +1,17 @@
-import css from 'components/SettingsButton/SettingsButton.module.css';
+import {
+  StyledSettingsButton,
+  StyledSettingsButtonIcon,
+} from 'components/SettingsButton/SettingsButton.styled';
 
 import { FiSettings } from 'react-icons/fi';
 
-const SettingsButton = () => {
+const SettingsButton = ({ darkTheme }) => {
   return (
-    <div className={css.settingButton}>
-      <span className={css.settingButtonIcon}>
+    <StyledSettingsButton darkTheme={darkTheme}>
+      <StyledSettingsButtonIcon>
         <FiSettings size="32px" />
-      </span>
-    </div>
+      </StyledSettingsButtonIcon>
+    </StyledSettingsButton>
   );
 };
 

@@ -6,6 +6,7 @@ export const StyledEmailButton = styled.div`
   margin-right: ${p => p.theme.space[4] + 4}px;
   border-radius: ${p => p.theme.space[3] + 2}px;
   background-color: ${p => p.theme.colors.transparent};
+  color: ${p => (p.darkTheme ? p.theme.colors.white : p.theme.colors.black)};
   position: relative;
   display: inline-flex;
   justify-content: center;
