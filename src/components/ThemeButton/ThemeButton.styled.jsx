@@ -6,19 +6,20 @@ export const StyledThemeButton = styled.div`
   margin-right: ${p => p.theme.space[4] + 4}px;
   border-radius: ${p => p.theme.space[3] + 2}px;
   background-color: transparent;
-  position: relative;
+  color: ${p => (p.darkTheme ? p.theme.colors.black : p.theme.colors.primary)};
+  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 
-  /* &:hover {
-    background-color: ${p => p.theme.colors.secBgColorHeaderBtn};
+  &:hover {
+    /* background-color: ${p => p.theme.colors.secBgColorHeaderBtn}; */
     color: ${p => p.theme.colors.secColorHeaderBtn};
-  } */
+  }
 `;
 
-export const StyledNotificationButtonIcon = styled.span`
+export const StyledThemeButtonIcon = styled.span`
   align-items: center;
 `;
 

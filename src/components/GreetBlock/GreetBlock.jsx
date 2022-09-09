@@ -3,10 +3,11 @@ import {
   StyledGreetBlockText,
 } from 'components/GreetBlock/GreetBlock.styled';
 
-const GreetBlock = ({ name }) => {
+const GreetBlock = data => {
+  console.log(data);
   return (
     <StyledGreetBlockWrapper>
-      <StyledGreetBlockText>Hi, {name}</StyledGreetBlockText>
+      <StyledGreetBlockText>Hi, {data.name}</StyledGreetBlockText>
       <StyledGreetBlockText>
         Here's what's happening today.
       </StyledGreetBlockText>

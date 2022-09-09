@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Box } from './Box';
 
-import Header from './Header/Header';
+// import Header from './Header/Header';
 import GreetBlock from './GreetBlock/GreetBlock';
 import SearchBlock from './SearchBlock/SearchBlock';
 
@@ -36,8 +36,16 @@ export class App extends Component {
       >
         <Aside />
         <Box ml={4} width="100%">
-          <Header>
-            <GreetBlock name={this.state.name} />
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+            borderBottom="1px solid #e0e0e0"
+          >
+            <GreetBlock
+              name={this.state.name}
+              darkTheme={this.state.darkTheme}
+            />
             <SearchBlock />
             <Box display="flex" gridGap={4}>
               <EmailButton email={this.state.email} />
@@ -49,8 +57,7 @@ export class App extends Component {
               />
               {/* <ProfileButton /> */}
             </Box>
-          </Header>
-          <div className="apps"></div>
+          </Box>
         </Box>
       </Box>
     );

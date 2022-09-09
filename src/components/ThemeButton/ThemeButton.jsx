@@ -1,18 +1,16 @@
 import { BsSun, BsMoon } from 'react-icons/bs';
 
-import {
-  StyledThemeButton,
-  StyledNotificationButtonIcon,
-} from './ThemeButton.styled';
+import { StyledThemeButton, StyledThemeButtonIcon } from './ThemeButton.styled';
 
-const ThemeRutton = ({ onClick, darkTheme }) => {
+const ThemeButton = ({ onClick, darkTheme }) => {
+  console.log(darkTheme);
   return (
     <StyledThemeButton onClick={onClick}>
-      <StyledNotificationButtonIcon>
+      <StyledThemeButtonIcon>
         {darkTheme ? <BsSun size="32px" /> : <BsMoon size="32px" />}
-      </StyledNotificationButtonIcon>
+      </StyledThemeButtonIcon>
     </StyledThemeButton>
   );
 };
 
-export default ThemeRutton;
+export default ThemeButton;
