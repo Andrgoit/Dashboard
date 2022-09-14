@@ -4,7 +4,6 @@ import StyledList from 'components/ImageFinderList/ImageFinderList';
 
 class ImageFinder extends Component {
   render() {
-    console.log(this.props);
     const { isOpenImageFinder, onClick } = this.props;
     return (
       <>

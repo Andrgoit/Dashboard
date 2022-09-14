@@ -21,7 +21,7 @@ export class App extends Component {
     notification: 12,
     name: 'Andrey',
     isOpenImageFinder: false,
-    isOpenPhoneBook: false,
+    isOpenPhoneBook: true,
     darkTheme: false,
     query: '',
   };
@@ -49,13 +49,16 @@ export class App extends Component {
   };
 
   render() {
+    const {
+      darkTheme,
+      name,
+      email,
+      notification,
+      isOpenImageFinder,
+      isOpenPhoneBook,
+    } = this.state;
     return (
-      <Box
-        display="flex"
-        height="100vh"
-        p={4}
-        bg={this.state.darkTheme ? 'text' : 'body'}
-      >
+      <Box display="flex" height="100vh" p={4} bg={darkTheme ? 'text' : 'body'}>
         <ToastContainer
           position="top-right"
           autoClose={2000}
@@ -75,41 +78,32 @@ export class App extends Component {
             justifyContent="space-between"
             borderBottom="1px solid #e0e0e0"
           >
-            <GreetBlock
-              name={this.state.name}
-              darkTheme={this.state.darkTheme}
-            />
+            <GreetBlock name={name} darkTheme={darkTheme} />
             <SearchBlock
               onSubmit={this.changeQuery}
-              isOpenImageFinder={this.state.isOpenImageFinder}
+              isOpenImageFinder={isOpenImageFinder}
             />
             <Box display="flex" gridGap={4}>
-              <EmailButton
-                email={this.state.email}
-                darkTheme={this.state.darkTheme}
-              />
+              <EmailButton email={email} darkTheme={darkTheme} />
               <NotificationButton
-                notification={this.state.notification}
-                darkTheme={this.state.darkTheme}
+                notification={notification}
+                darkTheme={darkTheme}
               />
-              <SettingsButton darkTheme={this.state.darkTheme} />
-              <ThemeButton
-                darkTheme={this.state.darkTheme}
-                onClick={this.changeTheme}
-              />
+              <SettingsButton darkTheme={darkTheme} />
+              <ThemeButton darkTheme={darkTheme} onClick={this.changeTheme} />
               {/* <ProfileButton /> */}
             </Box>
           </Box>
           <Box display="flex">
             <Box width="70%" p={4}>
               <ImageFinder
-                isOpenImageFinder={this.state.isOpenImageFinder}
+                isOpenImageFinder={isOpenImageFinder}
                 onClick={this.toggleImageFinderButton}
               />
             </Box>
-            <Box width="30%" p={4}>
+            <Box width="20%" p={4}>
               <PhoneBook
-                isOpenPhoneBook={this.state.isOpenPhoneBook}
+                isOpenPhoneBook={isOpenPhoneBook}
                 onClick={this.togglePhoneBookButton}
               />
             </Box>
