@@ -1,9 +1,10 @@
-import PhoneBookButton from './PhoneBookButton';
+import { toast } from 'react-toastify';
 import { Box } from 'components/Box';
 import { Component } from 'react';
 import PhoneBookSection from './PhoneBookSection/PhoneBookSection';
 import ContactForm from './ContactForm/ContactForm';
 import Contacts from './Contacts/Contacts';
+import PhoneBookButton from './PhoneBookButton';
 
 class PhoneBook extends Component {
   state = {
@@ -13,7 +14,10 @@ class PhoneBook extends Component {
   };
 
   addContacts = data => {
-    console.log(data);
+    const { contacts } = this.state;
+    if (contacts.length >= 5) {
+      return toast.info('Достигнуто максимальное кол-во контактов...');
+    }
     this.setState(prevState => ({
       contacts: [...prevState.contacts, data],
     }));
@@ -31,15 +35,17 @@ class PhoneBook extends Component {
             p={2}
             textAlign="center"
             borderRadius="6px"
-            height="500px"
+            height="510px"
             bg="phoneBook.bgContainer"
           >
             <PhoneBookSection title="Phonebook">
               <ContactForm onSubmit={addContacts} />
             </PhoneBookSection>
-            <PhoneBookSection title="Contacts">
-              <Contacts contacts={contacts} />
-            </PhoneBookSection>
+            {contacts.length >= 1 && (
+              <PhoneBookSection title="Contacts">
+                <Contacts contacts={contacts} />
+              </PhoneBookSection>
+            )}
           </Box>
         )}
       </>

@@ -7,7 +7,7 @@ export default function Contacts({ contacts }) {
       {contacts.map(({ name, number, id }) => {
         return (
           <StyledItem key={id}>
-            {name}:{number}
+            {name} : {number}
           </StyledItem>
         );
       })}

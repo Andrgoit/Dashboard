@@ -47,7 +47,7 @@ export default class ContactForm extends Component {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
           />
-          <Styledlabel htmlFor="name">Number</Styledlabel>
+          <Styledlabel htmlFor="number">Number</Styledlabel>
           <StyledInput
             type="tel"
             onChange={handlerChange}
