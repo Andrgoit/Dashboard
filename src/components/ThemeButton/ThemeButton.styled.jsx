@@ -13,7 +13,7 @@ export const StyledThemeButton = styled.div`
   align-items: center;
   cursor: pointer;
 
-  &:hover {
+  :hover {
     /* background-color: ${p => p.theme.colors.secBgColorHeaderBtn}; */
     color: ${p => p.theme.colors.secColorHeaderBtn};
   }

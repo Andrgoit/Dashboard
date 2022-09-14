@@ -9,9 +9,9 @@ const GreetBlock = ({ name, darkTheme }) => {
       <StyledGreetBlockText darkTheme={darkTheme}>
         Hi, {name}
       </StyledGreetBlockText>
-      <StyledGreetBlockText darkTheme={darkTheme}>
+      {/* <StyledGreetBlockText darkTheme={darkTheme}>
         Here's what's happening today.
-      </StyledGreetBlockText>
+      </StyledGreetBlockText> */}
     </StyledGreetBlockWrapper>
   );
 };

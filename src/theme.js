@@ -7,6 +7,14 @@ export const theme = {
     background: '#fff',
     primary: '#07c',
     secondary: '#05a',
+    phoneBook: {
+      bgContainer: 'rgba(0, 200, 80, 0.2)',
+      bgMainButton: 'rgba(255, 170, 0, 0.2)',
+    },
+    imageFinder: {
+      bgContainer: 'rgba(234, 47, 58, 0.2)',
+      bgMainButton: 'rgba(155, 81, 224, 0.2)',
+    },
     searchBlock: {
       color: '#6c757d',
       border: '#e0e0e0',

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Box } from './Box';
 
 // import Header from './Header/Header';
@@ -9,21 +11,41 @@ import EmailButton from 'components/EmailButton/EmailButton';
 import NotificationButton from './NotificationButton/NotificationButton';
 import SettingsButton from './SettingsButton/SettingsButton';
 import ThemeButton from './ThemeButton/ThemeButton';
-import Aside from './Aside/Aside';
+import ImageFinder from './ImageFinder/ImageFinder';
+import PhoneBook from './PhoneBook/PhoneBook';
+// import Aside from './Aside/Aside';
 
 export class App extends Component {
   state = {
-    email: 3,
+    email: 44,
     notification: 12,
     name: 'Andrey',
     isOpenImageFinder: false,
+    isOpenPhoneBook: false,
     darkTheme: false,
+    query: '',
   };
 
   changeTheme = () => {
     this.setState(prevState => ({
       darkTheme: !prevState.darkTheme,
     }));
+  };
+
+  toggleImageFinderButton = () => {
+    this.setState(prevState => ({
+      isOpenImageFinder: !prevState.isOpenImageFinder,
+    }));
+  };
+
+  togglePhoneBookButton = () => {
+    this.setState(prevState => ({
+      isOpenPhoneBook: !prevState.isOpenPhoneBook,
+    }));
+  };
+
+  changeQuery = data => {
+    this.setState({ query: data });
   };
 
   render() {
@@ -34,7 +56,18 @@ export class App extends Component {
         p={4}
         bg={this.state.darkTheme ? 'text' : 'body'}
       >
-        <Aside />
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        {/* <Aside /> */}
         <Box ml={4} width="100%">
           <Box
             display="flex"
@@ -46,7 +79,10 @@ export class App extends Component {
               name={this.state.name}
               darkTheme={this.state.darkTheme}
             />
-            <SearchBlock />
+            <SearchBlock
+              onSubmit={this.changeQuery}
+              isOpenImageFinder={this.state.isOpenImageFinder}
+            />
             <Box display="flex" gridGap={4}>
               <EmailButton
                 email={this.state.email}
@@ -62,6 +98,20 @@ export class App extends Component {
                 onClick={this.changeTheme}
               />
               {/* <ProfileButton /> */}
+            </Box>
+          </Box>
+          <Box display="flex">
+            <Box width="70%" p={4}>
+              <ImageFinder
+                isOpenImageFinder={this.state.isOpenImageFinder}
+                onClick={this.toggleImageFinderButton}
+              />
+            </Box>
+            <Box width="30%" p={4}>
+              <PhoneBook
+                isOpenPhoneBook={this.state.isOpenPhoneBook}
+                onClick={this.togglePhoneBookButton}
+              />
             </Box>
           </Box>
         </Box>
