@@ -5,12 +5,14 @@ import PhoneBookSection from './PhoneBookSection/PhoneBookSection';
 import ContactForm from './ContactForm/ContactForm';
 import Contacts from './Contacts/Contacts';
 import PhoneBookButton from './PhoneBookButton';
+import SearchForm from './SearchForm/SearchForm';
 
 class PhoneBook extends Component {
   state = {
     contacts: [],
     name: '',
     number: '',
+    filter: '',
   };
 
   addContacts = data => {
@@ -37,10 +39,20 @@ class PhoneBook extends Component {
     }));
   };
 
+  searchContact = value => {
+    this.setState({ filter: value });
+  };
+
   render() {
-    const { contacts } = this.state;
-    const { addContacts, deleteContacts } = this;
+    const { contacts, filter } = this.state;
+    const { addContacts, deleteContacts, searchContact } = this;
     const { isOpenPhoneBook, onClick } = this.props;
+
+    const normalizeFilter = filter.toLowerCase();
+
+    const filteredContacts = contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizeFilter)
+    );
     return (
       <>
         <PhoneBookButton isOpen={isOpenPhoneBook} onClick={onClick} />
@@ -56,9 +68,17 @@ class PhoneBook extends Component {
               <ContactForm onSubmit={addContacts} />
             </PhoneBookSection>
             {contacts.length >= 1 && (
-              <PhoneBookSection title="Contacts">
-                <Contacts contacts={contacts} onClick={deleteContacts} />
-              </PhoneBookSection>
+              <>
+                <PhoneBookSection title="Search...">
+                  <SearchForm onChange={searchContact} />
+                </PhoneBookSection>
+                <PhoneBookSection title="Contacts">
+                  <Contacts
+                    contacts={filteredContacts}
+                    onClick={deleteContacts}
+                  />
+                </PhoneBookSection>
+              </>
             )}
           </Box>
         )}

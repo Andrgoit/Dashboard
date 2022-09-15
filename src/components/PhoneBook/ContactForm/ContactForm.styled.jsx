@@ -26,6 +26,7 @@ export const StyledButton = styled.button`
   box-shadow: 0px 2px 2px black;
   top: 0;
   cursor: pointer;
+
   :active {
     box-shadow: none;
   }

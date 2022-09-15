@@ -5,8 +5,8 @@ export const StyledTitle = styled.h1`
   color: ${p => p.theme.colors.white};
   padding: 0;
   margin: 0;
-  margin-bottom: 20px;
-  display: inline;
+  margin-bottom: 5px;
+  display: inline-block;
   border-bottom: 2px solid red;
 `;
 export const StyledSection = styled.section`
