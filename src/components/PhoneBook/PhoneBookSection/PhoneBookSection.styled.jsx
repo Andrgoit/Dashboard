@@ -12,7 +12,7 @@ export const StyledTitle = styled.h1`
 export const StyledSection = styled.section`
   align-items: center;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 5px;
   border: 1px solid #000;
   border-radius: 4px;
   margin-bottom: 10px;

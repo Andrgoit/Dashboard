@@ -15,6 +15,14 @@ class PhoneBook extends Component {
 
   addContacts = data => {
     const { contacts } = this.state;
+
+    const checkForDublicate = contacts.find(
+      contact => contact.name.toLowerCase() === data.name.toLowerCase()
+    );
+
+    if (checkForDublicate) {
+      return toast.info('Такое имя контакта уже существует');
+    }
     if (contacts.length >= 5) {
       return toast.info('Достигнуто максимальное кол-во контактов...');
     }
@@ -23,9 +31,15 @@ class PhoneBook extends Component {
     }));
   };
 
+  deleteContacts = id => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
+  };
+
   render() {
     const { contacts } = this.state;
-    const { addContacts } = this;
+    const { addContacts, deleteContacts } = this;
     const { isOpenPhoneBook, onClick } = this.props;
     return (
       <>
@@ -43,7 +57,7 @@ class PhoneBook extends Component {
             </PhoneBookSection>
             {contacts.length >= 1 && (
               <PhoneBookSection title="Contacts">
-                <Contacts contacts={contacts} />
+                <Contacts contacts={contacts} onClick={deleteContacts} />
               </PhoneBookSection>
             )}
           </Box>

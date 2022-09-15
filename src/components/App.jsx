@@ -101,7 +101,7 @@ export class App extends Component {
                 onClick={this.toggleImageFinderButton}
               />
             </Box>
-            <Box width="20%" p={4}>
+            <Box width="25%" p={4}>
               <PhoneBook
                 isOpenPhoneBook={isOpenPhoneBook}
                 onClick={this.togglePhoneBookButton}
