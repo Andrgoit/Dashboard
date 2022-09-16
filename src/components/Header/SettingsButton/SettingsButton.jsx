@@ -1,7 +1,7 @@
 import {
   StyledSettingsButton,
   StyledSettingsButtonIcon,
-} from 'components/SettingsButton/SettingsButton.styled';
+} from 'components/Header/SettingsButton/SettingsButton.styled';
 
 import { FiSettings } from 'react-icons/fi';
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledTitle = styled.h1`
   font-size: ${p => p.theme.fontSizes.l};
-  color: ${p => p.theme.colors.white};
+  color: ${p => p.theme.colors.black};
   padding: 0;
   margin: 0;
   margin-bottom: 5px;

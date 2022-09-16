@@ -23,6 +23,16 @@ export const StyledSearchBlockInput = styled.input`
   line-height: ${p => p.theme.lineHeights.aside};
   width: ${p => p.theme.space[8] + 44}px;
 `;
+
+export const StyledContainer = styled.div`
+  padding: ${p => p.theme.space[2]}px;
+  /* border-bottom: ${p =>
+    `${p.theme.borders.normal}.${p.theme.colors.black}`}; */
+  border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: center;
+`;
+
 // .searchBlockForm {
 //   padding: 5px;
 //   border: 1px solid #e0e0e0;

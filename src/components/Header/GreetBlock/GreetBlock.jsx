@@ -1,7 +1,7 @@
 import {
   StyledGreetBlockWrapper,
   StyledGreetBlockText,
-} from 'components/GreetBlock/GreetBlock.styled';
+} from 'components/Header/GreetBlock/GreetBlock.styled';
 
 const GreetBlock = ({ name, darkTheme }) => {
   return (

@@ -3,10 +3,11 @@ import { Component } from 'react';
 import { toast } from 'react-toastify';
 
 import {
+  StyledContainer,
   StyledSearchBlockForm,
   StyledSearchBlockButton,
   StyledSearchBlockInput,
-} from 'components/SearchBlock/SearchBlock.styled';
+} from 'components/ImageFinder/SearchBlock/SearchBlock.styled';
 
 class SearchBlock extends Component {
   state = {
@@ -14,15 +15,15 @@ class SearchBlock extends Component {
   };
 
   handlerSubmitForm = e => {
+    const { query } = this.state;
+
     e.preventDefault();
-    if (!this.props.isOpenImageFinder) {
-      return toast.info('Image Finder не открыт!');
-    }
-    if (this.state.query === '') {
+
+    if (query.trim() === '') {
       return toast.info('Bad request');
     }
     toast.success('Поиск...');
-    this.props.onSubmit(this.state.query);
+    this.props.onSubmit(query);
     this.setState({ query: '' });
   };
 
@@ -33,7 +34,7 @@ class SearchBlock extends Component {
 
   render() {
     return (
-      <div>
+      <StyledContainer>
         <StyledSearchBlockForm onSubmit={this.handlerSubmitForm}>
           <StyledSearchBlockButton type="submit">
             <BiSearch size="16px" />
@@ -46,7 +47,7 @@ class SearchBlock extends Component {
             placeholder="Search..."
           />
         </StyledSearchBlockForm>
-      </div>
+      </StyledContainer>
     );
   }
 }

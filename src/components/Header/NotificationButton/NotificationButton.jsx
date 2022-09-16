@@ -2,7 +2,7 @@ import {
   StyledNotificationButton,
   StyledNotificationButtonIcon,
   StylednotificationButtonText,
-} from 'components/NotificationButton/NotificationButton.styled';
+} from 'components/Header/NotificationButton/NotificationButton.styled';
 
 import { IoMdNotificationsOutline } from 'react-icons/io';
 

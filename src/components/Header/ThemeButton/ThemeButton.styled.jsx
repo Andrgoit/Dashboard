@@ -22,14 +22,3 @@ export const StyledThemeButton = styled.div`
 export const StyledThemeButtonIcon = styled.span`
   align-items: center;
 `;
-
-// export const StylednotificationButtonText = styled.span`
-//   position: absolute;
-//   top: ${p => p.theme.space[1] + 1}px;
-//   right: ${p => p.theme.space[2] + 1}px;
-//   padding: ${p => `${p.theme.space[1] + 1}px ${p.theme.space[2] + 1}px`};
-//   font-size: ${p => p.theme.fontSizes.xs};
-//   color: ${p => p.theme.colors.colorEmailNotification};
-//   border-radius: ${p => p.theme.radii.sm};
-//   background-color: ${p => p.theme.colors.bgColorNotification};
-// `;

@@ -4,7 +4,7 @@ import {
   StyledEmailButton,
   StyledEmailButtonIcon,
   StyledEmailButtonText,
-} from 'components/EmailButton/EmailButton.styled';
+} from 'components/Header/EmailButton/EmailButton.styled';
 
 const EmailButton = ({ email, darkTheme }) => {
   return (

@@ -4,7 +4,7 @@ import { Component } from 'react';
 import PhoneBookSection from './PhoneBookSection/PhoneBookSection';
 import ContactForm from './ContactForm/ContactForm';
 import Contacts from './Contacts/Contacts';
-import PhoneBookButton from './PhoneBookButton';
+import PhoneBookButton from './PhoneBookButton/PhoneBookButton';
 import SearchForm from './SearchForm/SearchForm';
 
 class PhoneBook extends Component {
@@ -13,6 +13,13 @@ class PhoneBook extends Component {
     name: '',
     number: '',
     filter: '',
+    isOpenPhoneBook: false,
+  };
+
+  togglePhoneBookButton = () => {
+    this.setState(prevState => ({
+      isOpenPhoneBook: !prevState.isOpenPhoneBook,
+    }));
   };
 
   addContacts = data => {
@@ -44,9 +51,13 @@ class PhoneBook extends Component {
   };
 
   render() {
-    const { contacts, filter } = this.state;
-    const { addContacts, deleteContacts, searchContact } = this;
-    const { isOpenPhoneBook, onClick } = this.props;
+    const { contacts, filter, isOpenPhoneBook } = this.state;
+    const {
+      addContacts,
+      deleteContacts,
+      searchContact,
+      togglePhoneBookButton,
+    } = this;
 
     const normalizeFilter = filter.toLowerCase();
 
@@ -55,7 +66,10 @@ class PhoneBook extends Component {
     );
     return (
       <>
-        <PhoneBookButton isOpen={isOpenPhoneBook} onClick={onClick} />
+        <PhoneBookButton
+          isOpen={isOpenPhoneBook}
+          onClick={togglePhoneBookButton}
+        />
         {isOpenPhoneBook && (
           <Box
             p={2}

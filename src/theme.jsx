@@ -7,12 +7,16 @@ export const theme = {
     background: '#fff',
     primary: '#07c',
     secondary: '#05a',
-    phoneBook: {
+    feedback: {
       bgContainer: 'rgba(0, 200, 80, 0.5)',
+      bgMainButton: 'rgba(0, 200, 80)',
+    },
+    phoneBook: {
+      bgContainer: 'rgba(255, 170, 0, 0.5)',
       bgMainButton: 'rgba(255, 170, 0)',
     },
     imageFinder: {
-      bgContainer: 'rgba(234, 47, 58, 0.5)',
+      bgContainer: 'rgba(155, 81, 224, 0.5)',
       bgMainButton: 'rgba(155, 81, 224)',
     },
     searchBlock: {

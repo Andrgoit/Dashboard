@@ -4,15 +4,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Box } from './Box';
 
 // import Header from './Header/Header';
-import GreetBlock from './GreetBlock/GreetBlock';
-import SearchBlock from './SearchBlock/SearchBlock';
-
-import EmailButton from 'components/EmailButton/EmailButton';
-import NotificationButton from './NotificationButton/NotificationButton';
-import SettingsButton from './SettingsButton/SettingsButton';
-import ThemeButton from './ThemeButton/ThemeButton';
+import GreetBlock from './Header/GreetBlock/GreetBlock';
+import EmailButton from 'components/Header/EmailButton/EmailButton';
+import NotificationButton from './Header/NotificationButton/NotificationButton';
+import SettingsButton from './Header/SettingsButton/SettingsButton';
+import ThemeButton from './Header/ThemeButton/ThemeButton';
 import ImageFinder from './ImageFinder/ImageFinder';
 import PhoneBook from './PhoneBook/PhoneBook';
+import Feedback from './Feedback/Feedback';
 // import Aside from './Aside/Aside';
 
 export class App extends Component {
@@ -20,8 +19,6 @@ export class App extends Component {
     email: 44,
     notification: 12,
     name: 'Andrey',
-    isOpenImageFinder: false,
-    isOpenPhoneBook: true,
     darkTheme: false,
     query: '',
   };
@@ -32,31 +29,8 @@ export class App extends Component {
     }));
   };
 
-  toggleImageFinderButton = () => {
-    this.setState(prevState => ({
-      isOpenImageFinder: !prevState.isOpenImageFinder,
-    }));
-  };
-
-  togglePhoneBookButton = () => {
-    this.setState(prevState => ({
-      isOpenPhoneBook: !prevState.isOpenPhoneBook,
-    }));
-  };
-
-  changeQuery = data => {
-    this.setState({ query: data });
-  };
-
   render() {
-    const {
-      darkTheme,
-      name,
-      email,
-      notification,
-      isOpenImageFinder,
-      isOpenPhoneBook,
-    } = this.state;
+    const { darkTheme, name, email, notification } = this.state;
     return (
       <Box display="flex" height="100vh" p={4} bg={darkTheme ? 'text' : 'body'}>
         <ToastContainer
@@ -79,10 +53,7 @@ export class App extends Component {
             borderBottom="1px solid #e0e0e0"
           >
             <GreetBlock name={name} darkTheme={darkTheme} />
-            <SearchBlock
-              onSubmit={this.changeQuery}
-              isOpenImageFinder={isOpenImageFinder}
-            />
+
             <Box display="flex" gridGap={4}>
               <EmailButton email={email} darkTheme={darkTheme} />
               <NotificationButton
@@ -94,18 +65,15 @@ export class App extends Component {
               {/* <ProfileButton /> */}
             </Box>
           </Box>
-          <Box display="flex">
+          <Box display="block">
             <Box width="70%" p={4}>
-              <ImageFinder
-                isOpenImageFinder={isOpenImageFinder}
-                onClick={this.toggleImageFinderButton}
-              />
+              <ImageFinder />
             </Box>
             <Box width="25%" p={4}>
-              <PhoneBook
-                isOpenPhoneBook={isOpenPhoneBook}
-                onClick={this.togglePhoneBookButton}
-              />
+              <PhoneBook />
+            </Box>
+            <Box width="25%" p={4}>
+              <Feedback />
             </Box>
           </Box>
         </Box>
