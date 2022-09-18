@@ -7,17 +7,24 @@ export const theme = {
     background: '#fff',
     primary: '#07c',
     secondary: '#05a',
+
+    videoplayer: {
+      bgContainer: 'rgba(234, 47, 58, 0.2)',
+      bgMainButton: 'rgb(234, 47, 58)',
+    },
+
     feedback: {
       bgContainer: 'rgba(0, 200, 80, 0.5)',
-      bgMainButton: 'rgba(0, 200, 80)',
+      bgMainButton: 'rgb(0, 200, 80)',
     },
+
     phoneBook: {
       bgContainer: 'rgba(255, 170, 0, 0.5)',
-      bgMainButton: 'rgba(255, 170, 0)',
+      bgMainButton: 'rgb(255, 170, 0)',
     },
     imageFinder: {
       bgContainer: 'rgba(155, 81, 224, 0.5)',
-      bgMainButton: 'rgba(155, 81, 224)',
+      bgMainButton: 'rgb(155, 81, 224)',
     },
     searchBlock: {
       color: '#6c757d',

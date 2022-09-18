@@ -12,6 +12,7 @@ import ThemeButton from './Header/ThemeButton/ThemeButton';
 import ImageFinder from './ImageFinder/ImageFinder';
 import PhoneBook from './PhoneBook/PhoneBook';
 import Feedback from './Feedback/Feedback';
+import Videoplayer from './Videoplayer/Videoplayer';
 // import Aside from './Aside/Aside';
 
 export class App extends Component {
@@ -74,6 +75,9 @@ export class App extends Component {
             </Box>
             <Box width="25%" p={4}>
               <Feedback />
+            </Box>
+            <Box width="40%" p={4}>
+              <Videoplayer />
             </Box>
           </Box>
         </Box>
