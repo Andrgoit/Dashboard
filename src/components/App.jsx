@@ -33,7 +33,13 @@ export class App extends Component {
   render() {
     const { darkTheme, name, email, notification } = this.state;
     return (
-      <Box display="flex" height="100vh" p={4} bg={darkTheme ? 'text' : 'body'}>
+      <Box
+        display="flex"
+        // width="100vw"
+        height="100vh"
+        p={4}
+        bg={darkTheme ? 'text' : 'body'}
+      >
         <ToastContainer
           position="top-right"
           autoClose={2000}
@@ -76,7 +82,7 @@ export class App extends Component {
             <Box width="25%" p={4}>
               <Feedback />
             </Box>
-            <Box width="40%" p={4}>
+            <Box width="70%" p={4}>
               <Videoplayer />
             </Box>
           </Box>

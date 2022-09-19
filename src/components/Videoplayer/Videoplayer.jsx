@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { Box } from 'components/Box';
+
+// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+
 import VideoplayerButton from './VideoplayerButton/VideoplayerButton';
 import MovieList from './MovieList/MovieList';
 import videos from './videos.json';
+import Player from './Player/Player';
 
 export default class Videoplayer extends Component {
   state = {
@@ -22,7 +26,7 @@ export default class Videoplayer extends Component {
 
   render() {
     const { toggleVideoplayerButton, selectVideo } = this;
-    const { isOpenVideoplayer } = this.state;
+    const { isOpenVideoplayer, urlSelectedMovie } = this.state;
 
     return (
       <div>
@@ -39,10 +43,10 @@ export default class Videoplayer extends Component {
             height="100%"
             bg="videoplayer.bgContainer"
           >
-            <Box p={2} width="60%" textAlign="center">
-              Здесь будет видеоплеер...
+            <Box width="80%" p={2}>
+              <Player url={urlSelectedMovie} />
             </Box>
-            <Box p={2} width="40%" textAlign="center">
+            <Box p={2} width="120px" textAlign="center">
               <MovieList videos={videos} onClick={selectVideo} />
             </Box>
           </Box>
