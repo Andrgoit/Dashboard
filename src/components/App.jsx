@@ -37,7 +37,7 @@ export class App extends Component {
       <Box
         display="flex"
         // width="100vw"
-        height="100vh"
+        minHeight="100vh"
         p={4}
         bg={darkTheme ? 'text' : 'body'}
       >
