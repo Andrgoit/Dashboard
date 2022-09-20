@@ -7,6 +7,15 @@ export const theme = {
     background: '#fff',
     primary: '#07c',
     secondary: '#05a',
+    reader: {
+      bgContainer: 'rgba(234, 47, 58, 0.2)',
+      bgMainButton: 'rgb(234, 47, 58)',
+    },
+
+    calc: {
+      bgContainer: 'rgba(234, 47, 58, 0.2)',
+      bgMainButton: 'rgb(234, 47, 58)',
+    },
 
     videoplayer: {
       bgContainer: 'rgba(234, 47, 58, 0.2)',

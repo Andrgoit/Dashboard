@@ -13,6 +13,7 @@ import ImageFinder from './ImageFinder/ImageFinder';
 import PhoneBook from './PhoneBook/PhoneBook';
 import Feedback from './Feedback/Feedback';
 import Videoplayer from './Videoplayer/Videoplayer';
+import Reader from './Reader/Reader';
 // import Aside from './Aside/Aside';
 
 export class App extends Component {
@@ -84,6 +85,9 @@ export class App extends Component {
             </Box>
             <Box width="70%" p={4}>
               <Videoplayer />
+            </Box>
+            <Box width="50%" p={4}>
+              <Reader />
             </Box>
           </Box>
         </Box>
