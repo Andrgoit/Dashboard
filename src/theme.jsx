@@ -59,7 +59,7 @@ export const theme = {
     s: '12px',
     m: '14px',
     l: '16px',
-    xl: '64px',
+    xl: '24px',
   },
   fontWeights: {
     normal: 400,

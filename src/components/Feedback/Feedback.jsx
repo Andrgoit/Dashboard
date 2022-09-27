@@ -8,7 +8,7 @@ import Notification from './Notification/Notification';
 
 export default class Feedback extends Component {
   state = {
-    isOpenFeedback: false,
+    isOpenFeedback: true,
     good: 0,
     neutral: 0,
     bad: 0,

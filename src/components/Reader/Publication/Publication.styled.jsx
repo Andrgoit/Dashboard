@@ -16,4 +16,5 @@ export const StyledTitle = styled.h3`
 
 export const StyledText = styled.p`
   border: 1px dashed black;
+  padding: 5px;
 `;

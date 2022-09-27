@@ -8,7 +8,7 @@ import Publication from './Publication/Publication';
 
 class Reader extends Component {
   state = {
-    isOpenReader: false,
+    isOpenReader: true,
     index: 0,
   };
 

@@ -7,14 +7,39 @@ import Contacts from './Contacts/Contacts';
 import PhoneBookButton from './PhoneBookButton/PhoneBookButton';
 import SearchForm from './SearchForm/SearchForm';
 
+const KEY = 'contacts';
+
 class PhoneBook extends Component {
   state = {
-    contacts: [],
-    name: '',
-    number: '',
+    contacts: [
+      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+    ],
+    // name: '',
+    // number: '',
     filter: '',
-    isOpenPhoneBook: false,
+    isOpenPhoneBook: true,
   };
+
+  componentDidMount() {
+    try {
+      const contactBook = JSON.parse(localStorage.getItem(KEY));
+      if (contactBook !== null) {
+        this.setState({ contacts: contactBook });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    const { contacts } = this.state;
+    if (prevState.contacts !== contacts) {
+      localStorage.setItem(KEY, JSON.stringify(contacts));
+    }
+  }
 
   togglePhoneBookButton = () => {
     this.setState(prevState => ({
@@ -32,9 +57,9 @@ class PhoneBook extends Component {
     if (checkForDublicate) {
       return toast.info('Такое имя контакта уже существует');
     }
-    if (contacts.length >= 5) {
-      return toast.info('Достигнуто максимальное кол-во контактов...');
-    }
+    // if (contacts.length >= 5) {
+    //   return toast.info('Достигнуто максимальное кол-во контактов...');
+    // }
     this.setState(prevState => ({
       contacts: [...prevState.contacts, data],
     }));
@@ -75,7 +100,7 @@ class PhoneBook extends Component {
             p={2}
             textAlign="center"
             borderRadius="6px"
-            height="510px"
+            minHeight="240px"
             bg="phoneBook.bgContainer"
           >
             <PhoneBookSection title="Phonebook">

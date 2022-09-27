@@ -5,11 +5,11 @@ import { Box } from './Box';
 
 // import Header from './Header/Header';
 import GreetBlock from './Header/GreetBlock/GreetBlock';
-import EmailButton from 'components/Header/EmailButton/EmailButton';
-import NotificationButton from './Header/NotificationButton/NotificationButton';
-import SettingsButton from './Header/SettingsButton/SettingsButton';
+// import EmailButton from 'components/Header/EmailButton/EmailButton';
+// import NotificationButton from './Header/NotificationButton/NotificationButton';
+// import SettingsButton from './Header/SettingsButton/SettingsButton';
 import ThemeButton from './Header/ThemeButton/ThemeButton';
-import ImageFinder from './ImageFinder/ImageFinder';
+// import ImageFinder from './ImageFinder/ImageFinder';
 import PhoneBook from './PhoneBook/PhoneBook';
 import Feedback from './Feedback/Feedback';
 import Videoplayer from './Videoplayer/Videoplayer';
@@ -32,7 +32,8 @@ export class App extends Component {
   };
 
   render() {
-    const { darkTheme, name, email, notification } = this.state;
+    const { darkTheme, name } = this.state;
+    // const { email, notification } = this.state;
     return (
       <Box
         display="flex"
@@ -63,30 +64,36 @@ export class App extends Component {
             <GreetBlock name={name} darkTheme={darkTheme} />
 
             <Box display="flex" gridGap={4}>
-              <EmailButton email={email} darkTheme={darkTheme} />
-              <NotificationButton
-                notification={notification}
-                darkTheme={darkTheme}
-              />
-              <SettingsButton darkTheme={darkTheme} />
+              {/* <EmailButton email={email} darkTheme={darkTheme} /> */}
+              {/* <NotificationButton */}
+              {/* notification={notification} */}
+              {/* darkTheme={darkTheme} */}
+              {/* /> */}
+              {/* <SettingsButton darkTheme={darkTheme} /> */}
               <ThemeButton darkTheme={darkTheme} onClick={this.changeTheme} />
               {/* <ProfileButton /> */}
             </Box>
           </Box>
-          <Box display="block">
-            <Box width="70%" p={4}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            gridGap="20px"
+            justifyContent="center"
+            alignItems="center"
+          >
+            {/* <Box width="70%" p={4} mb={5} display="block">
               <ImageFinder />
-            </Box>
+            </Box> */}
             <Box width="25%" p={4}>
               <PhoneBook />
             </Box>
-            <Box width="25%" p={4}>
+            <Box width="25%" p={4} display="block">
               <Feedback />
             </Box>
-            <Box width="70%" p={4}>
+            <Box width="70%" p={4} display="block">
               <Videoplayer />
             </Box>
-            <Box width="50%" p={4}>
+            <Box width="50%" p={4} display="block">
               <Reader />
             </Box>
           </Box>

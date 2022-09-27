@@ -10,7 +10,7 @@ import Player from './Player/Player';
 
 export default class Videoplayer extends Component {
   state = {
-    isOpenVideoplayer: false,
+    isOpenVideoplayer: true,
     urlSelectedMovie: null,
   };
 

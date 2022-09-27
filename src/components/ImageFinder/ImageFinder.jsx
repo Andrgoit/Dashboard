@@ -3,13 +3,50 @@ import { Box } from 'components/Box';
 import SearchBlock from './SearchBlock/SearchBlock';
 import ImageFinderButton from 'components/ImageFinder/ImageFinderButton/ImageFinderButton';
 import StyledList from 'components/ImageFinder/ImageFinderList/ImageFinderList';
+import { apiRequest } from '../../utils/api-imageFinder';
+import FirstLoading from './FirstLoading/FirstLoading';
 
 class ImageFinder extends Component {
   state = {
-    isOpenImageFinder: false,
-    query: '',
-    page: 1,
+    pictures: [],
+    isOpenImageFinder: true, // открыт/закрыт окно с приложением
+    query: '', //запрос в инпуте
+    page: 1, //страница
+    status: 'idle', // для применении стейт машины
   };
+  // функция проверяет изменения пердыдущих  и "будущих" значений в стейте
+  componentDidUpdate(prevProps, prevState) {
+    const query = this.state.query;
+    const prevQuery = prevState.query;
+    const page = this.state.page;
+    const prevPage = prevState.page;
+
+    // сравнение
+    if (query !== prevQuery || page !== prevPage) {
+      this.setState({ status: 'pending' });
+
+      try {
+        apiRequest(query, page)
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            }
+            return Promise.reject(
+              new Error('Извините, такого изображения нет')
+            );
+          })
+          .then(data => {
+            this.setState(prev => ({
+              pictures: [...prev.pictures, ...data.hits],
+            }));
+            this.setState({ status: 'resolved' });
+          })
+          .finally();
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
 
   toggleImageFinderButton = () => {
     this.setState(prevState => ({
@@ -22,7 +59,7 @@ class ImageFinder extends Component {
   };
 
   render() {
-    const { isOpenImageFinder } = this.state;
+    const { isOpenImageFinder, status, pictures } = this.state;
     const { toggleImageFinderButton } = this;
 
     return (
@@ -32,9 +69,17 @@ class ImageFinder extends Component {
           onClick={toggleImageFinderButton}
         />
         {isOpenImageFinder && (
-          <Box height="400px" bg="imageFinder.bgContainer" borderRadius="md">
+          <Box height="500px" borderRadius="md">
             <SearchBlock onSubmit={this.changeQuery} />
-            <StyledList />
+            <Box
+              height="100%"
+              bg="imageFinder.bgContainer"
+              p={4}
+              overflow="scroll"
+            >
+              {status === 'idle' ? <FirstLoading /> : null}
+              <StyledList pictures={pictures} />
+            </Box>
           </Box>
         )}
       </>

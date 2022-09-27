@@ -25,6 +25,7 @@ export const StyledSearchBlockInput = styled.input`
 `;
 
 export const StyledContainer = styled.div`
+  background-color: ${p => p.theme.colors.imageFinder.bgContainer};
   padding: ${p => p.theme.space[2]}px;
   /* border-bottom: ${p =>
     `${p.theme.borders.normal}.${p.theme.colors.black}`}; */
